@@ -1,0 +1,338 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var msg = ViewBag.mseg;
+}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+
+    .container {
+        margin-top: 10%;
+    }
+
+    .stepwizard-step p {
+        margin-top: 10px;
+    }
+
+    .stepwizard-row {
+        display: table-row;
+    }
+
+    .stepwizard {
+        display: table;
+        width: 100%;
+        position: relative;
+    }
+
+    .stepwizard-step button[disabled] {
+        opacity: 1 !important;
+        filter: alpha(opacity=100) !important;
+    }
+
+    .stepwizard-row:before {
+        top: 14px;
+        bottom: 0;
+        position: absolute;
+        content: " ";
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        z-order: 0;
+    }
+
+    .stepwizard-step {
+        display: table-cell;
+        text-align: center;
+        position: relative;
+    }
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+    }
+    #Num_of_Emp{
+        visibility:hidden;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-center w-75 m-auto">
+                            <a href="index.html">
+                                <span><img src="~/Content/theme/images/logo-dark.png" alt="" height="26"></span>
+                            </a>
+
+                            <p class="text-muted mb-4 mt-3">Don't have an account? Create your free account now.</p>
+                        </div>
+                        <h5 class="auth-title">Create Account</h5>
+                        @using (Html.BeginForm("Register", "Signup", FormMethod.Post, new
+                        {
+                            enctype = "multipart/form-data"
+                        }))
+                        {
+                            <div class="row setup-content" id="step-1">
+                                <div class="col-xs-12">
+                                    <div class="col-md-12">
+
+                                        <div class="form-group">
+                                            <label class="control-label">Full Name</label>
+                                            <input maxlength="100" type="text" required="" class="form-control" id="full_name" name="full_name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Last Name</label>
+                                            <input maxlength="100" type="text" required="" class="form-control" id="last_name" name="last_name" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label">Email</label>
+                                            <input maxlength="100" type="text" required="" class="form-control" id="email" name="email" />
+                                        </div>
+                                        <button class="btn btn-danger nextBtn pull-right btn-block" type="button">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row setup-content" id="step-2">
+                                <div class="col-xs-12">
+                                    <div class="col-md-12">
+                                        @*<h3> Step 2</h3>*@
+                                        <div class="form-group">
+                                            <label class="control-label">Company Name</label>
+                                            <input maxlength="200" type="text" required="required" class="form-control" id="company_name" name="company_name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Company Domain</label>
+                                            <input maxlength="200" type="text" required="required" class="form-control" id="company_domain" name="company_domain" />
+                                        </div>
+                                        <button class="btn btn-danger nextBtn pull-right btn-block" type="button">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row setup-content" id="step-3">
+                                <div class="col-xs-12">
+                                    <div class="col-md-12">
+                                        @*<h3> Step 2</h3>*@
+                                        <div class="form-group">
+                                            <label class="control-label">Create password</label>
+                                            <input maxlength="200" type="password" required="" class="form-control" id="password" name="password" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Confirm Password</label>
+                                            <input maxlength="200" type="password" required="" class="form-control" id="confirm_password" name="confirm_password" />
+                                        </div>
+                                        <span id="ErrorPswd"></span>
+                                        <button class="btn btn-danger nextBtn pull-right btn-block" type="button" onclick="CheckValid()">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row setup-content" id="step-4">
+                                <div class="col-xs-12">
+                                    <div class="col-md-12">
+                                        @*<h3> Step 2</h3>*@
+                                        <div class="form-group">
+                                            <label class="control-label">Upload Logo</label>
+                                            <input type="file" name="img" id="img" onchange="imgvalid()" class="form-control" required="">
+                                        </div>
+                                        <button class="btn btn-danger nextBtn pull-right btn-block" type="button">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row setup-content" id="step-5">
+                                <div class="col-xs-12">
+                                    <div class="col-md-12">
+                                        @*<h3> Step 2</h3>*@
+                                        <div class="col-md-12">
+                                            <h4>Number Of Employees</h4>
+                                            <br />
+                                            <br />
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn20()" value="0-20"></input>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn40()" value="21-40"></input>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn60()" value="41-60"></input>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn80()" value="61-80"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn100()" value="81-100"></input>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn200()" value="101-200"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn300()" value="201-300"></input>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn400()" value="301-400"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn500()" value="401-500"></input>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <input type="button" class="btn btn-default btn-block" onclick="btn600()" value="501-600"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="text" id="Num_of_Emp" name="Num_of_Emp">
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <span id="ErrorNoEmp"></span>
+                                        <button class="btn btn-danger nextBtn pull-right btn-block" type="button" id="CheckNo_Emp">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row setup-content" id="step-6">
+                                <div class="col-xs-12">
+
+                                    <div class="form-group mb-0 text-center">
+                                        <button class="btn btn-danger btn-block" type="submit" id="btnSave">Sign Up </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        }
+
+
+
+                    </div> <!-- end card-body -->
+                </div>
+                <!-- end card -->
+
+                <div class="row mt-3">
+                    <div class="col-12 text-center">
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <p class="text-muted">Already have account?  <a href="/Login/Athentication/" class="text-muted ml-1"><b class="font-weight-semibold">Sign In</b></a></p>
+                                <p class="text-muted"><a href="/Home/Index/" class="text-muted ml-1"><b class="font-weight-semibold"><i class="fa fa-reply" aria-hidden="true"></i>Back To Website</b></a></p>
+                            </div>
+                        </div>
+
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div>
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step">
+                <a href="#step-1" type="button" class="btn btn-primary hidden"></a>
+
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-2" type="button" class="btn btn-default btn-circle hidden" disabled="disabled"></a>
+
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-3" type="button" class="btn btn-default btn-circle hidden" disabled="disabled">3</a>
+            </div>
+
+            <div class="stepwizard-step">
+                <a href="#step-4" type="button" class="btn btn-default btn-circle hidden" disabled="disabled">4</a>
+            </div>
+
+            <div class="stepwizard-step">
+                <a href="#step-5" type="button" class="btn btn-default btn-circle hidden" disabled="disabled">5</a>
+            </div>
+
+            <div class="stepwizard-step">
+                <a href="#step-6" type="button" class="btn btn-default btn-circle hidden" disabled="disabled">6</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+<script src="~/Jquery/Leads.js"></script>
+<script src="~/Jquery/Company_Create.js"></script>
+<script src="~/Content/theme/js/pages/form-validation.init.js"></script>
+<script src="~/Content/theme/libs/parsleyjs/parsley.min.js"></script>

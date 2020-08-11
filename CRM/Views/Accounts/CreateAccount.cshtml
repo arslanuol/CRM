@@ -1,0 +1,434 @@
+﻿
+@{
+    ViewBag.Title = "CreateAccount";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">CRM</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Accounts</a></li>
+                    <li class="breadcrumb-item active">Accounts</li>
+                </ol>
+            </div>
+            <h4 class="page-title"></h4>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="header-title">Account Information</h4>
+
+
+            <div class="alert alert-warning d-none fade show">
+                <h4 class="mt-0">Oh snap!</h4>
+                <p class="mb-0">This form seems to be invalid :(</p>
+            </div>
+            <br /><br /><br /><br />
+
+            <div class="alert alert-info d-none fade show">
+                <h4 class="mt-0">Yay!</h4>
+                <p class="mb-0">Everything seems to be ok :)</p>
+            </div>
+
+            <form id="demo-form" data-parsley-validate="">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Account Owner *:</label>
+                            <select id="accountowner" class="form-control" required="">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="rating">Rating*:</label>
+                            <select id="rating" class="form-control" required="">
+                                <option value="">Choose..</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="accountname">Account Name*:</label>
+                            <input type="text" class="form-control" name="firstname" id="accountname" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="Phonenumber">Phone #* :</label>
+                            <input type="text" class="form-control" name="phonenumber" id="phonenumber" required="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="accountsite">Account Site*:</label>
+                            <input type="text" class="form-control" name="accouuntsite" id="accountsite" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="fax">Fax:</label>
+                            <input type="text" class="form-control" name="faxnumber" id="faxnumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="email">Email*:</label>
+                            <input type="text" class="form-control" name="email" id="email" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="TitleofLeads">Phone* :</label>
+                            <input type="text" class="form-control" name="Phonenumber" id="Phonenumber" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="parentaccount">Parent Account:</label>
+                            <input type="text" class="form-control" name="parentaccount" id="accountnumber">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="website">Webiste:</label>
+                            <input type="text" class="form-control" name="webiste" id="website">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="accountnumber">Account Number:</label>
+                            <input type="text" class="form-control" name="accountnumber" id="accountnumber">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="tickersymbol">Ticker Symbol:</label>
+                            <input type="text" class="form-control" name="tickersymbol" id="tickersymbol">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Account Type*:</label>
+                            <select id="heard" class="form-control" required="">
+                                <option value="">Choose..</option>
+                                <option value="press">Press</option>
+                                <option value="net">Internet</option>
+                                <option value="mouth">Word of mouth</option>
+                                <option value="other">Other..</option>
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Ownership*:</label>
+                            <select id="heard" class="form-control" required="">
+                                <option value="">Choose..</option>
+                                <option value="press">Press</option>
+                                <option value="net">Internet</option>
+                                <option value="mouth">Word of mouth</option>
+                                <option value="other">Other..</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Industry*:</label>
+                            <select id="heard" class="form-control" required="">
+                                <option value="">Choose..</option>
+                                <option value="press">Press</option>
+                                <option value="net">Internet</option>
+                                <option value="mouth">Word of mouth</option>
+                                <option value="other">Other..</option>
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="TitleofLe">Employees* :</label>
+                            <input type="text" class="form-control" name="employees" id="employees" required="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="industry">Annual Revenue:</label>
+                            <input type="text" class="form-control" name="employees" id="employees">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+
+                </div>
+
+
+                <br />
+                <br />
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Account Image</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label>Account Image</label>
+                            <input type="file" name="img" id="img" onchange="imgvalid()" class="form-control" required="">
+
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <br />
+                <br />
+                <br />
+
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Address Information</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="Street">Billing street:</label>
+                            <input type="text" class="form-control" name="mailingstreet" id="mailingstreet">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="Street">Shipping street:</label>
+                            <input type="text" class="form-control" name="otherstreet" id="otherstreet">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="mailingcountry">Billing Country:</label>
+                            <select id="mailingCountry" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="otherCountry">Shipping Country:</label>
+                            <select id="otherCountry" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="mailingstate">Billing State:</label>
+                            <select id="mailingstate" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="OtherState">Shipping State:</label>
+                            <select id="otherstate" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="billingcode">Billig Cdoe:</label>
+                            <input type="text" class="form-control" name="billingcode" id="billingcode">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="shippingcdoe">Shipping Code:</label>
+                            <input type="text" class="form-control" name="shippingcode" id="shippingcode">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="billingcity">Billing City:</label>
+                            <select id="billing" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="shippingcity">Shipping City:</label>
+                            <select id="shippingcity" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <br />
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Description</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+
+
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea class="form-control" rows="5" id="description"></textarea>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group mb-0">
+                    <input type="submit" class="btn btn-success" value="Submit">
+                </div>
+
+            </form>
+        </div> <!-- end card-box-->
+    </div> <!-- end col-->
+</div>
+
+
+
+<script src="~/Jquery/Leads.js"></script>
+

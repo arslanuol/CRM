@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">CRM</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Type of Lead Source</a></li>
+                    <li class="breadcrumb-item active">Type of Lead Source</li>
+                </ol>
+            </div>
+            @*<h4 class="page-title">Type of Lead Source</h4>*@
+        </div>
+    </div>
+</div>
+
+
+<br />
+<br />
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="header-title">Type of Lead Source</h4>
+            <div class="alert alert-warning d-none fade show">
+                <h4 class="mt-0">Oh snap!</h4>
+                <p class="mb-0">This form seems to be invalid :(</p>
+            </div>
+            <br /><br /><br /><br />
+
+            <div class="alert alert-info d-none fade show">
+                <h4 class="mt-0">Yay!</h4>
+                <p class="mb-0">Everything seems to be ok :)</p>
+            </div>
+
+            <form id="demo-form" data-parsley-validate="">
+                <div class="form-group">
+                    
+                    <input type="hidden" class="form-control" name="company_id" id="company_id" value="@Session["Company_id"]" required="">
+                </div>
+                <div class="form-group">
+                    <label for="typeofleadsource">Type of Lead Source * :</label>
+                    <input type="text" class="form-control" name="leadsource_name" id="leadsource_name" required="">
+                </div>
+
+
+                <div class="form-group mb-0">
+                    <span id="Successmsg"></span>
+                    <br />
+                    <button type="button" id="btnSave" class="btn btn-success" onclick="Add()">Save</button>
+
+
+                </div>
+
+            </form>
+        </div> <!-- end card-box-->
+    </div> <!-- end col-->
+</div>
+
+
+
+<script src="~/Jquery/TypesofLeadSource.js"></script>

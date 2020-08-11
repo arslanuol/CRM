@@ -1,0 +1,930 @@
+﻿
+@{
+    ViewBag.Title = "Get_Contact_Information";
+    Layout = "~/Views/Shared/View.cshtml";
+    
+}
+
+@model CRM.Models.User_Information
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+@*<link href="~/Content/select2.min.css" rel="stylesheet" />
+    <script src="~/Scripts/select2.min.js"></script>*@
+
+<link href="~/Content/theme/libs/dropzone/dropzone.min.css" rel="stylesheet" />
+<!--Date Range picker-->
+<link href="~/Content/theme/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" />
+<link href="~/Content/theme/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" />
+<link href="~/Content/theme/libs/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+<link href="~/Content/theme/libs/daterangepicker/daterangepicker.css" rel="stylesheet" />
+<!--end Date range picker-->
+<!--Style Sheet-->
+<link href="~/Content/Modal.css" rel="stylesheet" />
+<link href="~/Content/Contact.css" rel="stylesheet" />
+<!--end style sheet-->
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-3">
+            <div class="sidebar">
+                <input type="hidden" class="form-control" name="Company_id" id="Company_id" value="@Session["Company_id"]" required="">
+                <a href="/contact/Create"><button type="button" class="btn btn-danger" id="btnContact"> <i class="fa fa-arrow-left"></i> Contact</button></a>
+                <div class="profile-userpic">
+                    <img src="~/Content/theme/images/users/user-1.jpg" />
+                </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        @Session["full_names"]
+                    </div>
+                    <div class="profile-usertitle-job">
+                        @Session["Job_Title"]
+                    </div>
+                </div>
+                <div class="page-content" id="page-content">
+                    <div class="padding">
+                        <div class="row d-flex justify-content-center">
+                            <ul class="socail-icons-head">
+                                <li>
+                                    <button type="button" class="btn btn-rounded btn-icon social-icon" data-toggle="tooltip" title="Notes" data-placement="top">
+                                        <i class="fa fa-sticky-note" aria-hidden="true" style="color:#606060;font-size:18px"></i>
+                                    </button>
+                                    <p class="label-icon">Notes</p>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-rounded btn-icon social-icon" data-toggle="tooltip" title="Email" data-placement="top"> <i class="fa fa-envelope-open" style="color:#606060;font-size:18px"></i> </button>
+                                    <p class="label-icon">Email</p>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-rounded btn-icon social-icon" data-toggle="tooltip" title="Calls" data-placement="top"> <i class="fa fa-phone" style="color:#606060;font-size:18px"></i> </button>
+                                    <p class="label-icon">Calls</p>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-rounded btn-icon social-icon" data-toggle="tooltip" title="Task" data-placement="top"> <i class="fa fa-tasks" style="color:#606060;font-size:18px"></i> </button>
+                                    <p class="label-icon">Task</p>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-rounded btn-icon social-icon" data-toggle="tooltip" title="Meet" data-placement="top"> <i class="fa fa-address-card" style="color:#606060;font-size:18px"></i> </button>
+                                    <p class="label-icon">Meet</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="divider" style="border-top:1px solid grey"></div>
+                <div class="row container-fluid">
+                    <div class="content_heading" style="padding-left:10px ">
+                        <h5>About this contact</h5>
+                        <hr />
+                    </div>
+
+                    <div class="container-fluid">
+                        <p>First name</p>
+                        <p id="full_names" name="full_names">@Session["full_names"]</p>
+                        <p>Last name</p>
+                        <p id="last_name" name="last_name">@Session["last_name"]</p>
+                        <p>Email</p>
+                        <p id="email" name="email">@Session["email"]</p>
+                        <p>Phone number</p>
+                        <p id="phone_Number" name="phone_Number">@Session["phone_Number"]</p>
+                        <p>Contact owner</p>
+                        <p id="full_name" name="full_name">@Session["full_name"]</p>
+                        <p>Life cycle stage</p>
+                        <p id="life_cycle_id" name="life_cycle_id">@Session["life_cycle_name"]</p>
+                        <p>Lead status</p>
+                        <p id="lead_status_id" name="lead_status_id">@Session["Lead_Status_name"]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Content Activity-->
+        <div class="col-md-6">
+            <div class="main">
+                <ul class="content-heding nav nav-tabs">
+                    <li><a data-toggle="pill" href="#activity">Activity</a></li>
+                    <li><a data-toggle="pill" href="#calls">Call</a></li>
+                    <li><a data-toggle="pill" href="#notes">Notes</a></li>
+                    <li><a data-toggle="pill" href="#task">Task</a></li>
+                    <li><a data-toggle="pill" href="#email">Email</a></li>
+                    <li><a data-toggle="pill" href="#meeting">Meeting</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="activity" class="tab-pane fade in active">
+                        <p>Activity</p>
+                    </div>
+                    <div id="email" class="tab-pane fade">
+                        <button type="button" class="btn btn-primary" style="float:right;margin-right:10px">Create email</button>
+                    </div>
+                    <div id="calls" class="tab-pane fade">
+                        <button type="button" class="btn btn-primary" style="float:right;margin-right:10px">Calls</button>
+                    </div>
+                    <div id="notes" class="tab-pane fade">
+                        <button type="button" class="btn btn-primary" style="float:right;margin-right:10px" data-toggle="modal" data-target="#myModal">Create notes</button>
+                        <br />
+                        <br />
+                        <br />
+                        <p style="padding:50px">Take notes about this record to keep track of important info.</p>
+                    </div>
+                    <div id="task" class="tab-pane fade">
+                        <button type="button" class="btn btn-primary" style="float:right;margin-right:10px" data-toggle="modal" data-target="#myModalTask">Create task</button>
+                    </div>
+                    <div id="meeting" class="tab-pane fade">
+                        <button type="button" class="btn btn-primary" style="float:right;margin-right:10px" data-toggle="modal" data-target="#">Create meeting</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Content Activity-->
+
+
+
+        <div class="col-md-3 right_sidebar">
+            <div class="card" style="border:1px solid #6699ff; border-radius:3px;">
+                <div class="card-header" style="background-color:white">
+                    <p>
+                        Deals
+                        <button type="button" class="btn btn-default btn-sm waves-effect waves-light" data-toggle="modal" data-target="#myModalDeals" style="font-size:14px; float:right"><i class="fa fa-plus" aria-hidden="true" style="font-size:14px;"></i>Add</button>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p>Use deals to track all your revenue opportunities.</p>
+                </div>
+            </div>
+
+
+            <!--Companies Create Information-->
+            <div class="card" style="border:1px solid #6699ff; border-radius:3px;">
+                <div class="card-header" style="background-color:white">
+                    <p>
+                        Companies
+                        <button type="button" class="btn btn-default btn-sm waves-effect waves-light" data-toggle="modal" data-target="#myModaCompanies" style="font-size:14px; float:right"><i class="fa fa-plus" aria-hidden="true" style="font-size:14px;"></i>Add</button>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p>View all interactions with this contact’s company in one place. Add an existing company from your CRM or create a new one.</p>
+                </div>
+            </div>
+            <!--end Companies Create-->
+
+            <div class="card" style="border:1px solid #6699ff; border-radius:3px;">
+                <div class="card-header" style="background-color:white">
+                    <p>
+                        Tickets
+                        <button type="button" class="btn btn-default btn-sm waves-effect waves-light" data-toggle="modal" data-target="#myModalTickets" style="font-size:14px; float:right"><i class="fa fa-plus" aria-hidden="true" style="font-size:14px;"></i>Add</button>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p>Use tickets to track all of your customer's questions and requests for help.</p>
+                </div>
+            </div>
+            <div class="card" style="border:1px solid #6699ff; border-radius:3px;">
+                <div class="card-header" style="background-color:white">
+                    <p>
+                        Attachment
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p>Use attachments to see all files previously sent to or added to this record</p>
+                    <div style="padding:5px">
+                        <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                              data-upload-preview-template="#uploadPreviewTemplate">
+                            @*<input name="file" type="file" multiple class="form-control" value="Upload file" />*@
+                            <div class="dropzone-previews mt-3" id="file-previews"></div>
+                            <div class="dz-message needsclick">
+                                <p class="h1 text-muted"><i class="mdi mdi-cloud-upload"></i></p>
+
+                                <span class="text-muted font-13">
+
+                                </span>
+                            </div>
+                        </form>
+
+                        @*<button type="button" class="btn btn-default">Upload new file</button>*@
+
+                        <br />
+                        <button type="button" class="btn btn-default btn btn-block">Choose existing file</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" role="dialog" style="bottom:-0px;">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(to right, #009999 0%, #00cc99 100%); border-bottom-color: #EEEEEE;">
+                <h4 class="modal-title" style="color:white">Create notes</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                <div class="mt-4">
+                    <form>
+                        <div class="form-group">
+                            <div id="summernote"></div>
+                        </div>
+                    </form>
+                </div> <!-- end card-->
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Save</button>
+                @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="myModalTask" role="dialog" style="bottom:-0px">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(to right, #009999 0%, #00cc99 100%); border-bottom-color: #EEEEEE;">
+                <h4 class="modal-title" style="color:white">Task</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="Enter your task" style="background-color:white; border:none" id="taskname" name="task" />
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4">
+                                    Due Date
+                                    <input type="date" class="form-control" id="task_date" name="task_date" />
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        Time
+                                        <div class="input-group clockpicker">
+                                            <input type="text" class="form-control" value="09:30">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="mdi mdi-clock-outline" style="font-size:15px;"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div class="form-group" style="padding-right:10px;padding-left:10px;margin-top:-43px">
+                <div class="mt-4">
+                    <form>
+                        <div class="form-group">
+                            <div id="summernote"></div>
+                            <textarea rows="8" class="form-control" placeholder="Notes" style="padding:10px"></textarea>
+
+                        </div>
+                    </form>
+                </div> <!-- end card-->
+            </div>
+
+            <div class="form-group">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                Types
+                                <select id="deal_owner_id" name="deal_owner_id" class="form-control" required=""></select>
+                            </div>
+                            <div class="col-md-3">
+                                Priority
+                                <select id="deal_owner_id" name="deal_owner_id" class="form-control" required=""></select>
+                            </div>
+                            <div class="col-md-5">
+                                Assigned to
+                                <select id="deal_owner_id" name="deal_owner_id" class="form-control" required=""></select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+            <div class="form-group">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                Email reminder
+                                <input type="date" class="form-control" id="date_reminder" name="date_reminder" />
+                            </div>
+                            <div class="col-md-3">
+                                Time
+                                <div class="input-group clockpicker" data-placement="top" data-align="top">
+                                    <input type="text" class="form-control" value="13:14">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="mdi mdi-clock-outline" style="font-size:15px"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                Queue
+                                <select id="deal_owner_id" name="deal_owner_id" class="form-control" required="">
+                                    <option value="#">Create Queue</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="divider"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" style="float:left">Save</button>
+                @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal for companies creating -->
+<div class="modal right fade" id="myModaCompanies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h4 style="color:white">Companies</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="text-align:right;font-size:28px;"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning d-none fade show">
+                            <h4 class="mt-0">Oh snap!</h4>
+                            <p class="mb-0">This form seems to be invalid :(</p>
+                        </div>
+                        <br /><br /><br /><br />
+
+                        <div class="alert alert-info d-none fade show">
+                            <h4 class="mt-0">Yay!</h4>
+                            <p class="mb-0">Everything seems to be ok :)</p>
+                        </div>
+
+                        <!--tab-->
+                        <div class="tab-compnay" style="margin-top:-247px">
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="pill" href="#existing">Existing company</a></li>
+                                <li><a data-toggle="pill" href="#Newcompany">New Company</a></li>
+                            </ul>
+                            <!--Tab content-->
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="existing">
+                                    <select id="company_User_ID" name="company_User_ID" class="form-control"></select>
+                                    <br />
+
+                                    <button type="button" class="btn btn-danger" style="float:right">Create</button>
+                                    <div id='result'></div>
+                                </div>
+                                <div class="tab-pane fade" id="Newcompany">
+                                    <button type="button" class="btn btn-primary btn-small" data-target="#myModalnewCompany" data-toggle="modal" onclick="HideModal()" id="btn_hideModal">Create company</button>
+                                </div>
+                            </div> <!--end Tab Content-->
+                        </div><!--end tab-->
+                    </div> <!-- end col-->
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div>
+<!--end modal -->
+
+
+
+
+<!--Modal for Deals Createing-->
+<div class="modal right fade" id="myModalDeals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h4 style="color:white">Deals</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="text-align:right;font-size:28px;"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning d-none fade show">
+                            <h4 class="mt-0">Oh snap!</h4>
+                            <p class="mb-0">This form seems to be invalid :(</p>
+                        </div>
+                        <br /><br /><br /><br />
+
+                        <div class="alert alert-info d-none fade show">
+                            <h4 class="mt-0">Yay!</h4>
+                            <p class="mb-0">Everything seems to be ok :)</p>
+                        </div>
+
+                        <!--tab-->
+                        <div class="tab-compnay" style="margin-top:-247px">
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="pill" href="#existingDeals">Existing Deals</a></li>
+                                <li><a data-toggle="pill" href="#NewDeals">New Deals</a></li>
+                            </ul>
+                            <!--Tab content-->
+                            <div class="tab-content">
+
+                                <!--New Deals-->
+                                <div class="tab-pane fade" id="NewDeals">
+                                    <button type="button" class="btn btn-primary btn-small" data-target="#newDealModal" data-toggle="modal" onclick="HideModal()" id="btn_hideModal">Create deals</button>
+                                </div>
+                                <!--End Deals-->
+                                <!--Existing Deals-->
+                                <div class="tab-pane in active" id="existingDeals">
+                                    <select id="deal_information_id" name="deal_information_id" class="form-control"></select>
+                                    <br />
+
+                                    <button type="button" class="btn btn-danger" style="float:right">Create</button>
+                                    <div id='result'></div>
+                                </div>
+                                <!--end existing deals-->
+                            </div> <!--end Tab Content-->
+                        </div><!--end tab-->
+                    </div> <!-- end col-->
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div>
+<!--End Modal-->
+
+
+
+<!--Modal CREATE FOR TICKETS-->
+<div class="modal right fade" id="myModalTickets" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h4 style="color:white">Tickets</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="text-align:right;font-size:28px;"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning d-none fade show">
+                            <h4 class="mt-0">Oh snap!</h4>
+                            <p class="mb-0">This form seems to be invalid :(</p>
+                        </div>
+                        <br /><br /><br /><br />
+
+                        <div class="alert alert-info d-none fade show">
+                            <h4 class="mt-0">Yay!</h4>
+                            <p class="mb-0">Everything seems to be ok :)</p>
+                        </div>
+
+                        <!--tab-->
+                        <div class="tab-compnay" style="margin-top:-247px">
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="pill" href="#existingTickets">Existing Tickets</a></li>
+                                <li><a data-toggle="pill" href="#newTickets">New Tickets</a></li>
+                            </ul>
+                            <!--Tab content-->
+                            <div class="tab-content">
+
+                                <!--New Deals-->
+                                <div class="tab-pane fade" id="newTickets">
+                                    <button type="button" class="btn btn-primary btn-small" data-target="#newTicketsModal" data-toggle="modal" onclick="HideModal()" id="btn_hideModal">Create Tickets</button>
+                                </div>
+                                <!--End Deals-->
+                                <!--Existing Deals-->
+                                <div class="tab-pane in active" id="existingTickets">
+                                    <select id='selUser' class="form-control"></select>
+                                    <br />
+
+                                    <button type="button" class="btn btn-danger" style="float:right">Create</button>
+                                    <div id='result'></div>
+                                </div>
+                                <!--end existing deals-->
+                            </div> <!--end Tab Content-->
+                        </div><!--end tab-->
+                    </div> <!-- end col-->
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div>
+<!--END MODAL-->
+
+<!--create New Company Model-->
+<div class="modal right fade" id="myModalnewCompany" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h4 style="color:white">Create companies</h4>
+                        @* <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="text-align:right;font-size:28px;"><span aria-hidden="true">&times;</span></button>*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body" style="margin-top:-247px">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning d-none fade show">
+                            <h4 class="mt-0">Oh snap!</h4>
+                            <p class="mb-0">This form seems to be invalid :(</p>
+                        </div>
+                        <br /><br /><br /><br />
+
+                        <div class="alert alert-info d-none fade show">
+                            <h4 class="mt-0">Yay!</h4>
+                            <p class="mb-0">Everything seems to be ok :)</p>
+                        </div>
+
+                        <form>
+                            <div class="form-group">
+                                Company domain name
+                                <input type="text" class="form-control" name="company_u_domain" id="company_u_domain" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Name
+                                <input type="text" class="form-control" name="company_u_name" id="company_u_name" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Company Owner
+                                <select id="company_owner" name="company_owner" class="form-control" required=""></select>
+                            </div>
+
+                            <div class="form-group">
+                                Industry
+                                <select id="Industry_id" name="Industry_id" class="form-control" required=""></select>
+                            </div>
+
+                            <div class="form-group">
+                                Phone number
+                                <input type="text" class="form-control" name="phone_number" id="phone_number" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Type
+                                <select id="Type_of_comp_id" name="Type_of_comp_id" class="form-control" required=""></select>
+                            </div>
+
+
+                            <div class="form-group">
+                                City
+                                <input type="text" class="form-control" name="city" id="city" required="">
+                            </div>
+
+                            <div class="form-group">
+                                State/Region
+                                <input type="text" class="form-control" name="state" id="state" required="">
+
+                            </div>
+
+                            <div class="form-group">
+                                Postal code
+                                <input type="text" class="form-control" name="postal_code" id="postal_code" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Number of employees
+                                <input type="text" class="form-control" name="no_emp" id="no_emp" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Annual revenue
+                                <input type="text" class="form-control" name="Annual_revenue" id="Annual_revenue" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Description
+                                <input type="text" class="form-control" name="Description" id="Description" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Linkedin company page
+                                <input type="text" class="form-control" name="linkedin_page" id="linkedin_page" required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="Create_date" id="Create_date" value="@DateTime.Now">
+                                <input type="hidden" class="form-control" name="company_User_ID" id="company_User_ID" required="">
+                                <input type="hidden" class="form-control" name="Company_id" id="Company_id" value="@Session["Company_id"]" required="">
+                                <input type="hidden" class="form-control" name="User_id" id="User_id" value="@Session["User_id"]" required="">
+                            </div>
+                            <div class="form-group">
+                                <span id="Successmsg"></span>
+                            </div>
+                        </form>
+
+                    </div> <!-- end col-->
+                </div>
+            </div>
+            <div class="modal-footer">
+
+
+                <button type="button" id="btnSave" class="btn btn-success btn-sm" onclick="AddCompany()" style="float:left;font-weight:bold !important;font-family:Arial !important;font-style: !important">Create company</button>
+                @* <button type="button" id="btnUpdate" class="btn btn-success hidden" onclick="Update()" style="float:left;font-weight:bold;font-family:Arial">Update Contact</button>*@
+                <button type="button" id="btnAnother" class="btn btn-outline-success btn-sm" onclick="CreateandAnothercomp()" style="float:left;font-weight:bold;font-family:Arial">Create and Add another</button>
+                <button type="button" id="btnCancel" class="btn btn-danger  btn-sm" onclick="Cancel()" style="float:left;font-weight:bold;font-family:Arial">Cancel</button>
+
+
+            </div>
+
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+<!--End new companuy Model-->
+
+
+
+<!--New Deal Modal-->
+<div class="modal right fade" id="newDealModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h4 style="color:white">Create Deal</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body" style="margin-top:-247px">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning d-none fade show">
+                            <h4 class="mt-0">Oh snap!</h4>
+                            <p class="mb-0">This form seems to be invalid :(</p>
+                        </div>
+                        <br /><br /><br /><br />
+
+                        <div class="alert alert-info d-none fade show">
+                            <h4 class="mt-0">Yay!</h4>
+                            <p class="mb-0">Everything seems to be ok :)</p>
+                        </div>
+
+                        <form>
+                            <div class="form-group">
+                                Deal name
+                                <input type="text" class="form-control" name="deal_name" id="deal_name" required="">
+                            </div>
+                            <div class="form-group">
+                                Pipline
+                                <select id="deal_pipeline_id" name="deal_pipeline_id" class="form-control" required=""></select>
+                            </div>
+                            <div class="form-group">
+                                Deal stage
+                                <select id="type_of_dealstage" name="type_of_dealstage" class="form-control" required=""></select>
+                            </div>
+                            <div class="form-group">
+                                Amount
+                                <input type="text" class="form-control" name="amont" id="amont" required="">
+                            </div>
+                            <div class="form-group">
+                                Close date
+                                <input type="date" class="form-control" name="closing_date" id="closing_date" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Deal owner
+                                <select class="form-control" required="">
+
+                                    <option>Select</option>
+                                    <option>@Session["full_name"]</option>
+                                </select>
+                                <input type="hidden" class="form-control" name="User_id" id="User_id" value="@Session["User_id"]" required="">
+                            </div>
+                            <div class="form-group">
+                                Deal type
+                                <select id="deal_type_id" name="deal_type_id" class="form-control" required=""></select>
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="Create_date" id="Create_date" value="@DateTime.Now">
+                                <input type="hidden" class="form-control" name="deal_information_id" id="deal_information_id" required="">
+                                <input type="hidden" class="form-control" name="company_id" id="company_id" value="@Session["Company_id"]" required="">
+                                <input type="hidden" class="form-control" name="User_id" id="User_id" value="@Session["User_id"]" required="">
+                            </div>
+                            <div class="form-group">
+                                <span id="Successmsg"></span>
+                            </div>
+                        </form>
+                    </div> <!-- end col-->
+                </div>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" id="btnSave" class="btn btn-success" onclick="Add()">Create Cotact</button>
+                @* <button type="button" id="btnUpdate" class="btn btn-success hidden" onclick="Update()" style="float:left;font-weight:bold;font-family:Arial">Update Contact</button>*@
+                <button type="button" id="btnAnother" class="btn btn-outline-success" onclick="CreateandAnother()">Create and Add another</button>
+                <button type="button" id="btnCancel" class="btn btn-danger" onclick="Cancel()">Cancel</button>
+            </div>
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div>
+<!-- modal -->
+
+
+
+
+<!--Create New Tickets Modal-->
+<div class="modal right fade" id="newTicketsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h4 style="color:white">Create ticket</h4>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body" style="margin-top:-247px">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning d-none fade show">
+                            <h4 class="mt-0">Oh snap!</h4>
+                            <p class="mb-0">This form seems to be invalid :(</p>
+                        </div>
+                        <br /><br /><br /><br />
+
+                        <div class="alert alert-info d-none fade show">
+                            <h4 class="mt-0">Yay!</h4>
+                            <p class="mb-0">Everything seems to be ok :)</p>
+                        </div>
+
+                        <form id="demo-form" data-parsley-validate="">
+                            <div class="form-group">
+                                Ticket name
+                                <input type="text" class="form-control" name="Ticket_name" id="Ticket_name" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Ticket status
+                                <select id="Ticket_status_id" name="Ticket_status_id" class="form-control" required=""></select>
+                            </div>
+
+                            <div class="form-group">
+                                Ticket source
+                                <select id="Ticket_Source_id" name="Ticket_Source_id" class="form-control" required=""></select>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                Ticket owner
+                                <select>
+                                    <option>Choose</option>
+                                    <option>@Session["full_name"]</option>
+                                </select>
+                            </div>
+                            <input type="hidden" id="User_id" name="User_id" class="form-control"value="@Session["User_id"]" />
+                            <div class="form-group">
+                                Priority
+                                <select id="priority_type_id" name="priority_type_id" class="form-control" required=""></select>
+                            </div>
+
+                            <div class="form-group">
+                                Tickets pipeline
+                                <select id="Ticket_pipeline_id" name="Ticket_pipeline_id" class="form-control" required=""></select>
+                            </div>
+
+                            <div class="form-group">
+                                Create Date
+                                <input type="Date" class="form-control" name="Created_date" id="Created_date" required="">
+                            </div>
+
+                            <div class="form-group">
+                                Description
+                                <input type="text" class="form-control" name="Description" id="Description" required="">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="Created_by" id="Created_by" value="@Session["User_id"]" required="">
+                                <input type="hidden" class="form-control hidden" name="Date_of_creation" id="Date_of_creation" value="@DateTime.Now" required="">
+                                <input type="hidden" class="form-control" name="Ticket_id" id="Ticket_id" required="">
+                                <input type="hidden" class="form-control" name="Company_id" id="Company_id" value="@Session["Company_id"]" required="">
+                            </div>
+                            <div class="form-group">
+                                <span id="Successmsg"></span>
+                            </div>
+                        </form>
+
+                    </div> <!-- end col-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" class="btn btn-success" onclick="AddTickets()">Create tickets</button>
+                @* <button type="button" id="btnUpdate" class="btn btn-success hidden" onclick="Update()" style="float:left;font-weight:bold;font-family:Arial">Update Contact</button>*@
+                <button type="button" id="btnAnother" class="btn btn-outline-success" onclick="CreateandAnotherTickets()">Create and Add another</button>
+                <button type="button" id="btnCancel" class="btn btn-danger" onclick="Cancel()">Cancel</button>
+            </div>
+
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div>
+<!--end tickets Modal-->
+
+
+    
+
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Jquery/ContactPage.js"></script>
+<script src="~/Jquery/Deals.js"></script>
+<script src="~/Jquery/Company_Users_Information.js"></script>
+<script src="~/Jquery/Tickets.js"></script>
+
+
+
+
+<script>
+   
+    $('#summernote').summernote({
+        placeholder: 'Hello Bootstrap 4',
+        tabsize: 2,
+        height: 100
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="~/Content/theme/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+<script src="~/Content/theme/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
+<script src="~/Content/theme/libs/daterangepicker/daterangepicker.js"></script>
+<script src="~/Content/theme/js/pages/form-pickers.init.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="~/Content/theme/libs/dropzone/dropzone.min.js"></script>

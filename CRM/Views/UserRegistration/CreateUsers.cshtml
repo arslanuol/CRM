@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "CreateUsers";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">CRM</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">User</a></li>
+                    <li class="breadcrumb-item active">Users Regisration</li>
+                </ol>
+            </div>
+            <h4 class="page-title"></h4>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="header-title">User Registration</h4>
+
+
+            <div class="alert alert-warning d-none fade show">
+                <h4 class="mt-0">Oh snap!</h4>
+                <p class="mb-0">This form seems to be invalid :(</p>
+            </div>
+            <br /><br /><br /><br />
+
+            <div class="alert alert-info d-none fade show">
+                <h4 class="mt-0">Yay!</h4>
+                <p class="mb-0">Everything seems to be ok :)</p>
+            </div>
+
+            <form id="demo-form" data-parsley-validate="">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="title">Title*:</label>
+                            <select id="title" class="form-control" required="">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="firstname">First Name*:</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname" required="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="lastname">Last Name*:</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                            <label for="email">Email*:</label>
+                            <input type="text" class="form-control" name="email" id="email" required="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="password">Password*:</label>
+                            <input type="password" class="form-control" name="password" id="password" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="confirmpassword">Confirm Password*:</label>
+                            <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" required="">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="phonenumber">Phone #:</label>
+                            <input type="text" class="form-control" name="phonenumber" id="phonenumber">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="otherphonenumber">Other phone #:</label>
+                            <input type="text" class="form-control" name="otherphonenumber" id="otherphonenumber">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="status">Status:</label>
+                            <select id="typestatus" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="userType">User Type:</label>
+                            <select id="userType" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Load Image</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label>Logo</label>
+                            <input type="file" name="img" id="img" onchange="imgvalid()" class="form-control" required="">
+
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group mb-0">
+                    <input type="submit" class="btn btn-success" value="Submit">
+                </div>
+
+            </form>
+        </div> <!-- end card-box-->
+    </div> <!-- end col-->
+</div>
+
+
+
+<script src="~/Jquery/Leads.js"></script>

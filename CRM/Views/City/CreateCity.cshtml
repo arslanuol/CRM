@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "CreateCity";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">CRM</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">City</a></li>
+                    <li class="breadcrumb-item active">City</li>
+                </ol>
+            </div>
+            @*<h4 class="page-title">Type of Lead Source</h4>*@
+        </div>
+    </div>
+</div>
+
+
+
+
+<br />
+<br />
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="header-title"></h4>
+            <div class="alert alert-warning d-none fade show">
+                <h4 class="mt-0">Oh snap!</h4>
+                <p class="mb-0">This form seems to be invalid :(</p>
+            </div>
+            <br /><br /><br /><br />
+
+            <div class="alert alert-info d-none fade show">
+                <h4 class="mt-0">Yay!</h4>
+                <p class="mb-0">Everything seems to be ok :)</p>
+            </div>
+
+            <form id="demo-form" data-parsley-validate="">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="heard">Country*:</label>
+                                <select id="country" class="form-control" required="">
+                                    <option value="">Choose..</option>
+                                </select>
+                            </div>
+                        </div>
+                        <span class="col-md-1"></span>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="state">State* :</label>
+                                <input type="text" class="form-control" name="typeofindutry" id="typeofindustry" required="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="City">City* :</label>
+                                <input type="text" class="form-control" name="typeofindutry" id="City" required="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group mb-0">
+                                <input type="submit" class="btn btn-success" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </form>
+        </div> <!-- end card-box-->
+    </div> <!-- end col-->
+</div>
+
+
+
+

@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewBag.Title = "CreateCampaign";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">CRM</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Campaign</a></li>
+                    <li class="breadcrumb-item active">Campaign</li>
+                </ol>
+            </div>
+            <h4 class="page-title"></h4>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="header-title">Campaign Information</h4>
+
+
+            <div class="alert alert-warning d-none fade show">
+                <h4 class="mt-0">Oh snap!</h4>
+                <p class="mb-0">This form seems to be invalid :(</p>
+            </div>
+            <br /><br /><br /><br />
+
+            <div class="alert alert-info d-none fade show">
+                <h4 class="mt-0">Yay!</h4>
+                <p class="mb-0">Everything seems to be ok :)</p>
+            </div>
+
+            <form id="demo-form" data-parsley-validate="">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Campaign Owner *:</label>
+                            <select id="accountowner" class="form-control" required="">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="rating">Type*:</label>
+                            <select id="rating" class="form-control" required="">
+                                <option value="">Choose..</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="campaignname">Campaign Name*:</label>
+                            <input type="text" class="form-control" name="campaignname" id="campaignname" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            
+                            <label for="status">Status*:</label>
+                            <select id="rating" class="form-control" required="">
+                                <option value="">Choose..</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="startdate">Start Date:</label>
+                            <input type="date" class="form-control" name="startdate" id="startdate">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="enddate">End Date:</label>
+                            <input type="text" class="form-control" name="enddate" id="enddate">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="expectedrevenue">Expected Revenue:</label>
+                            <input type="text" class="form-control" name="expectedrevenue" id="expectedrevenue">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="budgetcost">Budgeted Cost :</label>
+                            <input type="text" class="form-control" name="budgetcost" id="budgetcost">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="actualcost">Actual Cost:</label>
+                            <input type="text" class="form-control" name="actualcost" id="actualcost">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="expectedresponse">Expected Response:</label>
+                            <input type="text" class="form-control" name="expectedresponse" id="expectedresponse">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="numbersent">Number sent:</label>
+                            <input type="text" class="form-control" name="numbersent" id="numbersent">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    
+                </div>
+
+
+                <br />
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Description</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+
+
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea class="form-control" rows="5" id="description"></textarea>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group mb-0">
+                    <input type="submit" class="btn btn-success" value="Submit">
+                </div>
+
+            </form>
+        </div> <!-- end card-box-->
+    </div> <!-- end col-->
+</div>
+

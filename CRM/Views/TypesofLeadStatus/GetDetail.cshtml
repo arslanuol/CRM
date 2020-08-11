@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CRM.Models.Type_of_LeadStatus>
+
+@{
+    ViewBag.Title = "GetDetail";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<h2>GetDetail</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.lead_status_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_Information.company_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lead_status_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company_Information.company_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.lead_status_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.lead_status_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.lead_status_id })
+        </td>
+    </tr>
+}
+
+</table>

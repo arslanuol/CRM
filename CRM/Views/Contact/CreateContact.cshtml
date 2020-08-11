@@ -1,0 +1,477 @@
+﻿
+@{
+    ViewBag.Title = "CreateContact";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">CRM</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Contact</a></li>
+                    <li class="breadcrumb-item active">Contact</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Contact</h4>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="header-title">Contact Information</h4>
+
+
+            <div class="alert alert-warning d-none fade show">
+                <h4 class="mt-0">Oh snap!</h4>
+                <p class="mb-0">This form seems to be invalid :(</p>
+            </div>
+            <br /><br /><br /><br />
+
+            <div class="alert alert-info d-none fade show">
+                <h4 class="mt-0">Yay!</h4>
+                <p class="mb-0">Everything seems to be ok :)</p>
+            </div>
+
+            <form id="demo-form" data-parsley-validate="">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Contact Owner *:</label>
+                            <select id="heard" class="form-control" required="">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="LeadSource">Lead Source*:</label>
+                            <select id="leadsource" class="form-control" required="">
+                                <option value="">Choose..</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Title *:</label>
+                            <select id="heard" class="form-control" required="">
+                                <option value="">Choose..</option>
+                                <option value="press">Mr.</option>
+                                <option value="net">Mrs.</option>
+                                <option value="mouth">Ms.</option>
+                                <option value="other">Dr.</option>
+                                <option value="other">prof.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="typeofleadsource">First Name* :</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname" required="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="heard">Last Name*:</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="TitleofLeads">Title* :</label>
+                            <input type="text" class="form-control" name="titleofleads" id="titleofleads" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="accountname">Account Name*:</label>
+                            <input type="text" class="form-control" name="accountname" id="accountname" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="title">Titles* :</label>
+                            <input type="text" class="form-control" name="titles" id="titles" required="">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="email">Email*:</label>
+                            <input type="text" class="form-control" name="email" id="email" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="TitleofLeads">Department:</label>
+                            <input type="text" class="form-control" name="department" id="department">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="phone">Phone *:</label>
+                            <input type="text" class="form-control" name="phone" id="phone" required="">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="homephone">Home Phone :</label>
+                            <input type="text" class="form-control" name="homePhone" id="homephone">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="otherphone">Other Phone:</label>
+                            <input type="text" class="form-control" name="otherphone" id="otherphone">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="fax">Fax :</label>
+                            <input type="text" class="form-control" name="fax" id="fax">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="mobile">Mobile:</label>
+                            <input type="text" class="form-control" name="mobile" id="mobile">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="dob">Date</label>
+                            <input class="form-control" id="dob" type="date" name="date">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="assistant">Assistant:</label>
+                            <input type="text" class="form-control" name="assistant" id="assistant">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="assistant">Asst Number :</label>
+                            <input type="text" class="form-control" name="assistantnumber" id="assistantnumber">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            @*<label for="assistant">Assistant:</label>
+                    <input type="text" class="form-control" name="assistant" id="assistant">*@
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="Skypeid">Skype ID :</label>
+                            <input type="text" class="form-control" name="skypeid" id="skypeid">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            @*<label for="assistant">Assistant:</label>
+                    <input type="text" class="form-control" name="assistant" id="assistant">*@
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="secondaryemail">secandaryemail:</label>
+                            <input type="text" class="form-control" name="secandaryemai" id="secandaryemail">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            @*<label for="assistant">Assistant:</label>
+                    <input type="text" class="form-control" name="assistant" id="assistant">*@
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="twitter">Twitter:</label>
+                            <input type="text" class="form-control" name="twitter" id="twitter">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <br />
+                <br />
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Image</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label>Contact Image</label>
+                            <input type="file" name="contactimage" id="img" onchange="imgvalid()" class="form-control" required="">
+
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <br />
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Address Information</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="Street">Mailing street:</label>
+                            <input type="text" class="form-control" name="mailingstreet" id="mailingstreet">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="Street">Other street:</label>
+                            <input type="text" class="form-control" name="otherstreet" id="otherstreet">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="mailingcountry">Mailing Country:</label>
+                            <select id="mailingCountry" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="otherCountry">Other Country:</label>
+                            <select id="otherCountry" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="mailingstate">Mailing State:</label>
+                            <select id="mailingstate" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="OtherState">Other State:</label>
+                            <select id="otherstate" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="mailingcity">Mailing City:</label>
+                            <select id="mailingcity" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="othercity">Other City:</label>
+                            <select id="othercity" class="form-control">
+                                <option value="">Choose..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="mailingcity">Mailing Zipcode:</label>
+                            <input type="text" class="form-control" name="mailingzipcode" id="mailingzipcode">
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="otherzipcode">Other zipcode:</label>
+                            <input type="text" class="form-control" name="otherzipcode" id="otherzipcode">
+                        </div>
+                    </div>
+                </div>
+
+
+
+               
+
+
+                <br />
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <h4>Description</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+
+
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea class="form-control" rows="5" id="description"></textarea>
+                        </div>
+                    </div>
+                    <span class="col-md-1"></span>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group mb-0">
+                    <input type="submit" class="btn btn-success" value="Submit">
+                </div>
+
+            </form>
+        </div> <!-- end card-box-->
+    </div> <!-- end col-->
+</div>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Jquery/Contact.js"></script>

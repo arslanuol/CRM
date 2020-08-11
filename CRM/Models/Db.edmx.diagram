@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="afaa67a540cb454cb86e9d41c1ff4703" Name="Diagram1">
+        <EntityTypeShape EntityType="CRMModel.Account_Address_Information" Width="1.5" PointX="6" PointY="101.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Account_Contact_Information" Width="1.5" PointX="3" PointY="102.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Account_information" Width="1.5" PointX="5.25" PointY="166.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Account_type_Information" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Add_Notes" Width="1.5" PointX="3" PointY="94.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Attachment_file" Width="1.5" PointX="3" PointY="97.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.call_duration" Width="1.5" PointX="8.25" PointY="104.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.call_information" Width="1.5" PointX="5.25" PointY="148.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Call_result" Width="1.5" PointX="3" PointY="108.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Campaign_Budget_Information" Width="1.5" PointX="6" PointY="97.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.campaign_information" Width="1.5" PointX="5.25" PointY="153.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Campany_User_Info" Width="1.5" PointX="6" PointY="107.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.City" Width="1.5" PointX="6.75" PointY="84.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Company_contact_info" Width="1.5" PointX="17.25" PointY="103.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Company_Information" Width="1.5" PointX="0.75" PointY="98" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Company_u_no_emp" Width="1.5" PointX="17.25" PointY="108.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Contact_address_Information" Width="1.5" PointX="9" PointY="98.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.contact_contact_information" Width="1.5" PointX="9" PointY="109.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Contact_information" Width="1.5" PointX="5.25" PointY="160.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.contact_type_for_task" Width="1.5" PointX="3" PointY="139.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Contact_User" Width="1.5" PointX="3" PointY="110.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Country_name" Width="1.5" PointX="4.5" PointY="82.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Deal_information" Width="1.5" PointX="12" PointY="101.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.document_Information" Width="1.5" PointX="3" PointY="152.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.email_information" Width="1.5" PointX="3" PointY="155.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Event_information" Width="1.5" PointX="5.25" PointY="139.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.lead_address_information" Width="1.5" PointX="9" PointY="94.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.lead_contact_information" Width="1.5" PointX="6" PointY="93.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.lead_information" Width="1.5" PointX="8.25" PointY="169.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Lead_Status" Width="1.5" PointX="12" PointY="97.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Num_of_Emp_of_Comp" Width="1.5" PointX="3" PointY="181.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Related_to_call" Width="1.5" PointX="3" PointY="184" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Related_to_event" Width="1.5" PointX="3" PointY="186.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Related_to_Task" Width="1.5" PointX="3" PointY="189.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.State_name" Width="1.5" PointX="4.5" PointY="86.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.status_type_for_task" Width="1.5" PointX="3" PointY="192.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.task_information" Width="1.5" PointX="5.25" PointY="144.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.tbl_Type_TicketSource" Width="1.5" PointX="12" PointY="107.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Ticket" Width="1.5" PointX="17.25" PointY="95.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Title" Width="1.5" PointX="6" PointY="173.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_Account" Width="1.5" PointX="3" PointY="198.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.type_of_call" Width="1.5" PointX="3" PointY="200.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_campaign" Width="1.5" PointX="3" PointY="203.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_campaignstatus" Width="1.5" PointX="3" PointY="206.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_companies" Width="1.5" PointX="12" PointY="93.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_deal" Width="1.5" PointX="12" PointY="111.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_Deal_Stage" Width="1.5" PointX="6" PointY="113.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_Deals_Pipelines" Width="1.5" PointX="9" PointY="113.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_Industry" Width="1.5" PointX="15" PointY="102.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_LeadSource" Width="1.5" PointX="3" PointY="225.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_LeadStatus" Width="1.5" PointX="3" PointY="90.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_Ownership" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_priority" Width="1.5" PointX="9" PointY="90.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_of_Stage" Width="1.5" PointX="3" PointY="235.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Type_Rating" Width="1.5" PointX="3" PointY="237.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Types_of_call" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Types_of_Life_Cycle" Width="1.5" PointX="15" PointY="98.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Types_of_ticketsStatus" Width="1.5" PointX="15" PointY="106.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Typesoftickets_pipeline" Width="1.5" PointX="15" PointY="94.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.User_Contact_Information" Width="1.5" PointX="15" PointY="110.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.User_Information" Width="1.5" PointX="15" PointY="86.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.User_type" Width="1.5" PointX="12.75" PointY="89.125" IsExpanded="true" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_Account_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_City" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_City1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_Country_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_Country_name1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_State_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Address_Information_State_name1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Contact_Information_Account_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_Contact_Information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_information_Type_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_information_Type_of_Industry" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_information_Type_Rating" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Account_information_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Add_Notes_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Attachment_file_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_call_duration_call_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_call_duration_Call_result" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_call_duration_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_call_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_call_information_Related_to_call" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_call_information_type_of_call" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Call_result_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Campaign_Budget_Information_campaign_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Campaign_Budget_Information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_campaign_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_campaign_information_Type_of_campaign" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_campaign_information_Type_of_campaignstatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_campaign_information_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Campany_User_Info_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Campany_User_Info_Type_of_companies" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Campany_User_Info_Type_of_Industry" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Campany_User_Info_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Campany_User_Info_User_Information1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Company_contact_info_Campany_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Company_u_no_emp_Campany_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_City_Country_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_City_State_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_City" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_City1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_address_information_City" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Company_contact_info_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Company_u_no_emp_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_contact_contact_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_contact_type_for_task_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_User_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Deal_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_document_Information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_email_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Event_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_address_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_contact_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Lead_Status_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Num_of_Emp_of_Comp_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Related_to_call_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Related_to_event_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Related_to_Task_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_status_type_for_task_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_task_information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_tbl_Type_TicketSource_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Tickets_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_Account_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_type_of_call_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_campaign_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_campaignstatus_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_companies_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_deal_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_Deal_Stage_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_Deals_Pipelines_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_Industry_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_LeadSource_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_LeadStatus_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_priority_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_Stage_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_Rating_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Types_of_Life_Cycle_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Types_of_ticketsStatus_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Typesoftickets_pipeline_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_User_Contact_Information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_User_Information_Company_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_Contact_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_Country_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_Country_name1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_State_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_address_Information_State_name1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_contact_contact_information_Contact_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_information_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_information_Type_of_LeadSource" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_information_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_task_information_contact_type_for_task" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_User_Lead_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_User_Types_of_Life_Cycle" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_User_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Contact_User_User_Information1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_address_information_Country_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_State_name_Country_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Deal_information_Type_of_Deal_Stage" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Deal_information_Type_of_Deals_Pipelines" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Deal_information_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Deal_information_User_Information1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Event_information_Related_to_event" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_address_information_lead_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_address_information_State_name" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_contact_information_lead_information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_information_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_information_Type_of_Industry" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_information_Type_of_LeadSource" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_information_Type_of_LeadStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_information_Type_Rating" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_lead_information_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Lead_Status_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_task_information_Related_to_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_task_information_status_type_for_task" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_tbl_Type_TicketSource_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Tickets_tbl_Type_TicketSource" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Tickets_Type_of_priority" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Tickets_Types_of_ticketsStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Tickets_Typesoftickets_pipeline" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Tickets_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Tickets_User_Information1" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_companies_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_deal_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_Deal_Stage_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_Deals_Pipelines_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_Industry_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_LeadStatus_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Type_of_priority_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Types_of_Life_Cycle_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Types_of_ticketsStatus_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_Typesoftickets_pipeline_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_User_Contact_Information_User_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK_User_Information_User_type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
