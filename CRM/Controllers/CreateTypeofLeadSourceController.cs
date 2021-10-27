@@ -16,6 +16,7 @@ namespace CRM.Controllers
         {
             if (Session["Company_id"] != null)
             {
+                var test = 0;
                 return View();
             }
             else
